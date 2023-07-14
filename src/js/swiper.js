@@ -1,7 +1,6 @@
 import Swiper from 'swiper/swiper-bundle'
 
 const swiperService = new Swiper('.service__swiper', {
-  loop: true,
   breakpoints: {
     320: {
       grid: {
@@ -43,7 +42,6 @@ const swiperService = new Swiper('.service__swiper', {
 })
 
 const swiperBrands = new Swiper('.brands__swiper', {
-  loop: true,
   pagination: {
     el: '.swiper-pagination',
     clickable: true
@@ -90,7 +88,6 @@ const swiperBrands = new Swiper('.brands__swiper', {
 })
 
 const swiperTypes = new Swiper('.types__swiper', {
-  loop: true,
   pagination: {
     el: '.swiper-pagination',
     clickable: true
@@ -138,7 +135,6 @@ const swiperTypes = new Swiper('.types__swiper', {
 })
 
 const swiperPrice = new Swiper('.price__swiper', {
-  loop: true,
   pagination: {
     el: '.swiper-pagination',
     clickable: true
