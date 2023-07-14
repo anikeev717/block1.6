@@ -255,7 +255,7 @@ label {
     position: fixed;
     z-index: 100;
     background-color: var(--base-color-white);
-    overflow-y: scroll; }
+    overflow-y: auto; }
   .side-bar__close-area {
     width: 100%;
     display: block;
@@ -903,7 +903,7 @@ label {
     position: fixed;
     z-index: 100;
     background-color: var(--base-color-white);
-    overflow-y: scroll; }
+    overflow-y: auto; }
   .modal__close-area {
     width: 100%;
     display: block;
