@@ -1,0 +1,210 @@
+#burger-button:checked + .side-bar {
+  transform: translateY(0);
+  & .side-bar__wrapper {
+    box-shadow: var(--menu--shadow);
+  }
+}
+.side-bar {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  transform: translateY(-100vh);
+  display: flex;
+  justify-content: flex-start;
+  transition: all 0.5s;
+  &__wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 0 16px;
+    position: fixed;
+    z-index: 100;
+    background-color: var(--base-color-white);
+  }
+  &__close-area {
+    width: 100%;
+    display: block;
+    background-color: var(--base-color-white);
+    opacity: 0.9604799747467041;
+  }
+  &__header {
+    width: 100%;
+    height: 88px;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  &__content {
+    height: calc(100% - 88px);
+    padding: 8px 0 32px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__item:not(:first-of-type) {
+    margin-top: 24px;
+  }
+  &__link {
+    color: var(--text-color-first);
+    @include TTLakesElement;
+    transition: all 0.3s;
+    &:hover,
+    &--active {
+      color: var(--text-color-second);
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        left: -16px;
+        top: -5px;
+        width: 4px;
+        height: 32px;
+        background-image: url('../img/actions-icon/highlight-mini.svg');
+        object-fit: contain;
+      }
+    }
+    &:hover {
+      color: var(--action-color-first);
+      &::after {
+        background-image: url('../img/actions-icon/highlight-mini-h.svg');
+      }
+    }
+  }
+  &__info-wrapper {
+    width: 100%;
+    height: 156px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__action-wrapper {
+    height: 44px;
+    padding-bottom: 4px;
+  }
+  &__action {
+    &:not(:last-of-type),
+    &--burger {
+      margin-right: 16px;
+    }
+
+    &--search {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 40px;
+      height: 40px;
+      transform: translateY(-50%);
+    }
+  }
+  &__info {
+    color: var(--text-color-first);
+    &--email {
+      @include TTLakesElement;
+    }
+    &--phone {
+      @include TTLakesElementBig;
+    }
+  }
+  &__language-wrapper {
+    width: 87px;
+    height: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  &__language {
+    color: var(--text-color-first);
+    @include TTLakesElement;
+    &--active {
+      color: var(--text-color-second);
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .side-bar {
+    &__wrapper {
+      width: 320px;
+      padding: 0 24px;
+    }
+    &__content {
+      padding-top: 32px;
+    }
+    &__item:not(:first-of-type) {
+      margin-top: 32px;
+    }
+    &__link {
+      &:hover,
+      &--active {
+        &::after {
+          left: -24px;
+        }
+      }
+    }
+    &__info-wrapper {
+      height: 188px;
+    }
+    &__language-wrapper {
+      height: 66px;
+    }
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .container {
+    display: flex;
+    width: 1366px;
+    margin: 0 auto;
+  }
+  .side-bar {
+    width: 306px;
+    height: auto;
+    position: static;
+    transform: translateY(0);
+    &__wrapper {
+      position: static;
+      box-shadow: none;
+    }
+    &__close-area {
+      display: none;
+    }
+    &__header {
+      height: 110px;
+    }
+    &__action {
+      &--burger {
+        display: none;
+      }
+    }
+    &__content {
+      padding-top: 8px;
+      height: calc(100vh - 8px - 110px);
+    }
+    &__item:not(:first-of-type) {
+      margin-top: 28.31px;
+    }
+    &__link {
+      &:hover,
+      &--active {
+        &::after {
+          background: var(--action-color-fourth);
+          border-radius: 2px;
+          width: 3px;
+        }
+      }
+      &:hover {
+        &::after {
+          background: var(--action-color-first);
+        }
+      }
+    }
+  }
+}

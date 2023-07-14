@@ -1,0 +1,84 @@
+@mixin TTLakesTitle {
+  font-family: 'TT Lakes';
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.6px;
+}
+@mixin TTLakesElement {
+  font-family: 'TT Lakes';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
+@mixin TTLakesElementBig {
+  font-family: 'TT Lakes';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: -0.6px;
+}
+@mixin TTLakesSubtitle {
+  font-family: 'TT Lakes';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  text-transform: uppercase;
+}
+
+@mixin TTLakesRegular {
+  font-family: 'TT Lakes';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+}
+@mixin TTLakesAdditional {
+  font-family: 'TT Lakes';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+}
+@mixin TTLakesAdditionalSpacing {
+  font-family: 'TT Lakes';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+}
+@mixin TTLakesUnit {
+  text-align: right;
+  font-family: 'TT Lakes';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.15px;
+  text-transform: uppercase;
+}
+@mixin ImageIconElement {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  max-width: 100%;
+  max-height: 100%;
+}
+@mixin DisplayFlexAiJcCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin DisplayFlexAiCenterJcSpaceBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

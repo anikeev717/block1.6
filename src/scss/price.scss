@@ -1,0 +1,178 @@
+.price {
+  &__table {
+    padding: 16px 0 16px 8px;
+  }
+  &__row {
+    width: 260px;
+    height: 200px;
+    border-radius: 6px;
+    background: var(--base-color-white);
+    padding: 16px;
+    position: relative;
+    &--header {
+      display: none;
+    }
+  }
+  &__order {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(-16px, -50%);
+  }
+  &__col {
+    @include TTLakesRegular;
+    margin: 4px 0 16px;
+    color: var(--text-color-first);
+    &--serv::before,
+    &--cost::before,
+    &--time::before {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--text-color-second);
+      @include TTLakesAdditional;
+      opacity: 0.7218424677848816;
+    }
+    &--serv {
+      &::before {
+        content: 'Ремонтные услуги';
+      }
+    }
+    &--cost {
+      &::before {
+        content: 'Цена';
+      }
+    }
+    &--time {
+      &::before {
+        content: 'Срок';
+      }
+    }
+  }
+  &__description {
+    width: 100%;
+    padding: 0 16px 16px 16px;
+  }
+  &__text {
+    @include TTLakesAdditionalSpacing;
+    color: var(--text-color-first);
+  }
+
+  &__offer {
+    display: inline-block;
+    width: 192px;
+    margin: 0 0 40px 16px;
+    color: var(--text-color-first);
+    @include TTLakesElement;
+    position: relative;
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 12px;
+      background-image: url(../img/actions-icon/offer.svg);
+      position: absolute;
+      bottom: 0;
+      transform: translate(5px, -5px);
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .price {
+    &__table {
+      padding: 32px 24px 24px 24px;
+    }
+    &__row {
+      width: 100%;
+      height: 64px;
+      display: flex;
+
+      &--header {
+        background-color: var(--main-color-first);
+        padding-top: 0;
+        height: auto;
+        .price__col {
+          color: var(--text-color-second);
+          @include TTLakesAdditional;
+          opacity: 0.7218424677848816;
+        }
+      }
+    }
+    &__col {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      &--serv {
+        width: 51.5%;
+        &::before {
+          display: none;
+        }
+      }
+      &--cost {
+        width: 14%;
+        &::before {
+          display: none;
+        }
+      }
+      &--time {
+        width: 14.5%;
+        &::before {
+          display: none;
+        }
+      }
+    }
+    &__swiper {
+      .swiper-slide:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        width: calc(100% - 32px);
+        height: 1px;
+        background-color: var(--action-color-third);
+        bottom: 0;
+        left: 16px;
+      }
+    }
+    &__description {
+      padding: 0;
+      margin: 0 0 16px 24px;
+      width: 421px;
+    }
+    &__offer {
+      margin: 0 0 48px 24px;
+      width: 100%;
+    }
+  }
+}
+@media screen and (min-width: 1366px) {
+  .price {
+    &__table {
+      padding: 32px;
+    }
+    &__row {
+      padding: 24px;
+    }
+    &__col {
+      &--serv {
+        width: 44.5%;
+      }
+      &--cost {
+        width: 21.5%;
+      }
+      &--time {
+        width: 18%;
+      }
+    }
+    &__swiper {
+      .swiper-slide:not(:last-child)::after {
+        width: calc(100% - 48px);
+        left: 24px;
+      }
+    }
+    &__description {
+      margin-left: 32px;
+    }
+    &__offer {
+      margin: 0 0 50px 32px;
+    }
+  }
+}

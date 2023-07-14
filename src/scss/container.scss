@@ -1,0 +1,16 @@
+.container {
+  background-color: var(--main-color-first);
+  border-right: 1px solid var(--main-color-first);
+  width: 100%;
+}
+.content {
+  overflow-x: hidden;
+}
+@media screen and (min-width: 1366px) {
+  .container {
+    display: flex;
+    width: 1366px;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}

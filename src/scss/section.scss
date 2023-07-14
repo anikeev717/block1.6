@@ -1,0 +1,124 @@
+.section {
+  &:not(:first-of-type) {
+    border-bottom: 1px solid var(--action-color-second);
+  }
+  &__title {
+    @include TTLakesSubtitle;
+    padding: 16px;
+    color: var(--text-color-second);
+    width: 100%;
+    background: linear-gradient(90deg, #f8f8f8 0%, #fff 100%);
+  }
+  &__link {
+    color: inherit;
+    transition: all 0.5s;
+    &:hover {
+      color: var(--action-color-first);
+    }
+    &--modal {
+      color: var(--action-color-first);
+      &:hover {
+        color: var(--action-color-fourth);
+      }
+    }
+  }
+  &__button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+    background-color: var(--action-color-first);
+    border-radius: 50%;
+    &:not(.section__button--order):not(.section__button--submit) {
+      min-width: 40px;
+      min-height: 40px;
+    }
+    &:hover:not(.section__button--go) {
+      background-color: var(--action-color-fourth);
+      box-shadow: 0 0 5px 1px var(--action-color-fourth);
+    }
+    &--go {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      transform: translate(-16px, -16px);
+      background-color: var(--base-color-white);
+      border: 2px solid var(--action-color-first);
+    }
+    &--order,
+    &--submit {
+      width: 120px;
+      height: 32px;
+      border-radius: 16px;
+      color: var(--base-color-white);
+      @include TTLakesUnit;
+      & .section__img {
+        margin-left: 16px;
+        & path {
+          fill: var(--base-color-white);
+        }
+      }
+    }
+    &--submit {
+      width: 136px;
+      & .section__img {
+        margin-left: 12px;
+      }
+    }
+  }
+  &__img {
+    @include ImageIconElement;
+    & path {
+      transition: all 0.5s;
+    }
+  }
+  &__read-more {
+    @include TTLakesElement;
+    display: inline-flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    color: var(--text-color-first);
+    transition: all 0.5s;
+    & .section__img {
+      margin-right: 16px;
+    }
+    &:hover {
+      color: var(--action-color-first);
+      & path {
+        fill: var(--action-color-first);
+      }
+    }
+    &:not(.about__read-more) ::after {
+      content: 'Показать все';
+    }
+    &:is(.about__read-more) ::after {
+      content: 'Читать далее';
+    }
+  }
+
+  &__checkbox:checked {
+    & + .section__checkbox-target {
+      max-height: 100vh;
+    }
+    & ~ .section__read-more {
+      & ::after {
+        content: 'Скрыть';
+      }
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .section {
+    &__title {
+      padding-left: 24px;
+    }
+  }
+}
+@media screen and (min-width: 1366px) {
+  .section {
+    &__title {
+      padding-left: 32px;
+      position: relative;
+    }
+  }
+}

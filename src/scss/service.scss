@@ -1,0 +1,81 @@
+.service {
+  &__title {
+    padding: 112px 16px 0;
+    width: 100%;
+    @include TTLakesTitle;
+    position: relative;
+    &::before {
+      content: '';
+      width: 4px;
+      height: 40px;
+      background-image: url('../img/actions-icon/highlight.svg');
+      position: absolute;
+      left: 0;
+    }
+  }
+  &__list {
+    margin: 24px 0 24px 16px;
+    height: 40px;
+  }
+  &__item {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    transition: all 0.3s;
+    padding: 0 20px;
+    outline: 2px solid transparent;
+    border-radius: 6px;
+  }
+  &__link {
+    @include TTLakesElement;
+    display: inline;
+    color: var(--text-color-second);
+    white-space: nowrap;
+    transition: all 0.3s;
+  }
+
+  &__swiper {
+    .swiper-slide {
+      border: 2px solid transparent;
+      border-radius: 6px;
+      transition: all 0.5s;
+      &-active {
+        border: 2px solid var(--action-color-fiveth);
+        background-color: var(--base-color-white);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .service {
+    &__title {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+    &__list {
+      margin: 32px 0 32px 24px;
+    }
+  }
+}
+@media screen and (min-width: 1366px) {
+  .service {
+    &__title {
+      padding: 42px 36px 0;
+    }
+    &__list {
+      margin: 8px 36px;
+      height: auto;
+    }
+    &__swiper {
+      & .swiper-slide {
+        &:hover {
+          border: 2px solid var(--action-color-first);
+          background: var(--base-color-white);
+          color: var(--action-color-first);
+        }
+      }
+    }
+  }
+}

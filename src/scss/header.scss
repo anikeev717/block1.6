@@ -1,0 +1,113 @@
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+  height: 88px;
+  background-color: var(--base-color-white);
+  border-bottom: 1px solid var(--action-color-second);
+  display: flex;
+
+  &__wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 24px 16px;
+    @include DisplayFlexAiCenterJcSpaceBetween;
+    &--left,
+    &--right {
+      width: 152px;
+      height: 100%;
+      @include DisplayFlexAiCenterJcSpaceBetween;
+    }
+    &--right {
+      width: 118px;
+    }
+  }
+  &__logo {
+    display: block;
+    width: 96px;
+    height: 50px;
+  }
+  &__border {
+    width: 2px;
+    height: 32px;
+    background-color: var(--action-color-third);
+    &--left {
+      display: none;
+    }
+  }
+  &__action-wrapper {
+    width: 96px;
+    height: 40px;
+    @include DisplayFlexAiCenterJcSpaceBetween;
+    &--add {
+      display: none;
+      width: 152px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    &__wrapper {
+      padding: 24px;
+      &--left {
+        width: 178px;
+      }
+      &--right {
+        width: 290px;
+      }
+    }
+    &__border {
+      &--left {
+        display: block;
+      }
+    }
+    &__action-wrapper {
+      &--add {
+        display: flex;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .header {
+    position: relative;
+    visibility: hidden;
+    height: 0;
+    &__action-wrapper--main {
+      position: absolute;
+      visibility: visible;
+      width: 240px;
+      height: 40px;
+      top: 42px;
+      right: 30px;
+    }
+
+    &__action {
+      position: relative;
+      &::before {
+        position: absolute;
+        left: -9px;
+        top: 50%;
+        transform: translate(-100%, -50%);
+        color: var(--text-color-first);
+        @include TTLakesElement;
+        white-space: nowrap;
+        transition: all 0.5s;
+      }
+      &--repair::before {
+        content: 'Оставить заявку';
+      }
+      &--status::before {
+        content: 'Статус ремонта';
+      }
+      &:hover {
+        &::before {
+          color: var(--action-color-fourth);
+        }
+      }
+    }
+  }
+}
