@@ -18,6 +18,7 @@
     position: fixed;
     z-index: 100;
     background-color: var(--base-color-white);
+    overflow-y: scroll;
   }
   &__close-area {
     width: 100%;

@@ -1,5 +1,7 @@
 #burger-button:checked + .side-bar {
-  transform: translateY(0);
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
   & .side-bar__wrapper {
     box-shadow: var(--menu--shadow);
   }
@@ -7,21 +9,24 @@
 .side-bar {
   width: 100%;
   height: 100vh;
+  display: flex;
+  justify-content: flex-start;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
-  transform: translateY(-100vh);
-  display: flex;
-  justify-content: flex-start;
+  transform: translateX(-100%);
+  visibility: hidden;
+  opacity: 0;
   transition: all 0.5s;
   &__wrapper {
-    width: 100%;
+    width: 320px;
     height: 100%;
     padding: 0 16px;
     position: fixed;
     z-index: 100;
     background-color: var(--base-color-white);
+    overflow-y: scroll;
   }
   &__close-area {
     width: 100%;
@@ -168,7 +173,9 @@
     width: 306px;
     height: auto;
     position: static;
-    transform: translateY(0);
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
     &__wrapper {
       position: static;
       box-shadow: none;
