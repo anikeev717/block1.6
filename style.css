@@ -907,13 +907,17 @@ label {
   .modal__close-area {
     width: 100%;
     display: block;
-    background-color: rgba(255, 255, 255, 0.96048); }
-    .modal__close-area label {
+    background-color: rgba(255, 255, 255, 0.96048);
+    position: relative; }
+    .modal__close-area-item {
       display: block;
       width: 100%;
       height: 100%; }
   .modal__button {
-    position: absolute; }
+    position: absolute;
+    top: 24px;
+    right: 264px;
+    z-index: 100; }
   .modal__title {
     margin-top: 80px;
     color: var(--text-color-first);
@@ -1025,8 +1029,7 @@ label {
             backdrop-filter: grayscale(100%); }
   .modal__button {
     top: 24px;
-    left: -24px;
-    transform: translateX(-100%); }
+    right: 344px; }
   .modal__title {
     margin-top: 8px; }
     .modal__title::before {
@@ -1042,8 +1045,7 @@ label {
     padding-right: 32px; }
   .modal__button {
     top: 32px;
-    left: -32px;
-    transform: translateX(-100%); }
+    right: 472px; }
   .modal__title {
     margin-top: 16px; }
     .modal__title::before {
