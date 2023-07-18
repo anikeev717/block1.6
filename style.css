@@ -14,6 +14,8 @@
 @charset "UTF-8";
 * {
   box-sizing: border-box; }
+  *:focus {
+    outline: none; }
 
 body,
 p,
@@ -100,11 +102,11 @@ label {
 .section__link {
   color: inherit;
   transition: all 0.5s; }
-  .section__link:hover {
+  .section__link:hover, .section__link:focus {
     color: var(--action-color-first); }
   .section__link--modal {
     color: var(--action-color-first); }
-    .section__link--modal:hover {
+    .section__link--modal:hover, .section__link--modal:focus {
       color: var(--action-color-fourth); }
 
 .section__button {
@@ -117,7 +119,7 @@ label {
   .section__button:not(.section__button--order):not(.section__button--submit) {
     min-width: 40px;
     min-height: 40px; }
-  .section__button:hover:not(.section__button--go) {
+  .section__button:hover:not(.section__button--go), .section__button:focus:not(.section__button--go) {
     background-color: var(--action-color-fourth);
     box-shadow: 0 0 5px 1px var(--action-color-fourth); }
   .section__button--go {
@@ -148,6 +150,12 @@ label {
     width: 136px; }
     .section__button--submit .section__img {
       margin-left: 12px; }
+  .section__button-label {
+    min-width: inherit;
+    min-height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
 
 .section__img {
   display: block;
@@ -172,9 +180,9 @@ label {
   transition: all 0.5s; }
   .section__read-more .section__img {
     margin-right: 16px; }
-  .section__read-more:hover {
+  .section__read-more:hover, .section__read-more:focus {
     color: var(--action-color-first); }
-    .section__read-more:hover path {
+    .section__read-more:hover path, .section__read-more:focus path {
       fill: var(--action-color-first); }
   .section__read-more:not(.about__read-more) ::after {
     content: 'Показать все'; }
@@ -289,10 +297,10 @@ label {
     line-height: 24px;
     letter-spacing: -0.2px;
     transition: all 0.3s; }
-    .side-bar__link:hover, .side-bar__link--active {
+    .side-bar__link:hover, .side-bar__link:focus, .side-bar__link--active {
       color: var(--text-color-second);
       position: relative; }
-      .side-bar__link:hover::after, .side-bar__link--active::after {
+      .side-bar__link:hover::after, .side-bar__link:focus::after, .side-bar__link--active::after {
         content: '';
         position: absolute;
         left: -16px;
@@ -301,9 +309,9 @@ label {
         height: 32px;
         background-image: url(./static/highlight-mini.svg);
         object-fit: contain; }
-    .side-bar__link:hover {
+    .side-bar__link:hover, .side-bar__link:focus {
       color: var(--action-color-first); }
-      .side-bar__link:hover::after {
+      .side-bar__link:hover::after, .side-bar__link:focus::after {
         background-image: url(./static/highlight-mini-h.svg); }
   .side-bar__info-wrapper {
     width: 100%;
@@ -364,7 +372,7 @@ label {
     padding-top: 32px; }
   .side-bar__item:not(:first-of-type) {
     margin-top: 32px; }
-  .side-bar__link:hover::after, .side-bar__link--active::after {
+  .side-bar__link:hover::after, .side-bar__link:focus::after, .side-bar__link--active::after {
     left: -24px; }
   .side-bar__info-wrapper {
     height: 188px; }
@@ -397,11 +405,11 @@ label {
       height: calc(100vh - 8px - 110px); }
     .side-bar__item:not(:first-of-type) {
       margin-top: 28.31px; }
-    .side-bar__link:hover::after, .side-bar__link--active::after {
+    .side-bar__link:hover::after, .side-bar__link:focus::after, .side-bar__link--active::after {
       background: var(--action-color-fourth);
       border-radius: 2px;
       width: 3px; }
-    .side-bar__link:hover::after {
+    .side-bar__link:hover::after, .side-bar__link:focus::after {
       background: var(--action-color-first); } }
 
 .header {
@@ -492,7 +500,7 @@ label {
         content: 'Оставить заявку'; }
       .header__action--status::before {
         content: 'Статус ремонта'; }
-      .header__action:hover::before {
+      .header__action:hover::before, .header__action:focus::before {
         color: var(--action-color-fourth); } }
 
 .service__title {
@@ -560,7 +568,7 @@ label {
   .service__list {
     margin: 8px 36px;
     height: auto; }
-  .service__swiper .swiper-slide:hover {
+  .service__swiper .swiper-slide:hover, .service__swiper .swiper-slide:focus {
     border: 2px solid var(--action-color-first);
     background: var(--base-color-white);
     color: var(--action-color-first); } }
@@ -587,8 +595,13 @@ label {
 
 .about__background {
   width: 100%;
-  height: 230px;
-  padding: 24px 0; }
+  min-height: 176px;
+  padding: 24px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .about__background .section__img {
+    object-fit: contain; }
 
 @media screen and (min-width: 768px) {
   .about__wrapper {
@@ -609,22 +622,26 @@ label {
     margin: 10px 0 0 10px; }
   .about__background {
     width: 50%;
-    height: 260px;
-    padding: 0; }
-  .about__img {
-    border-radius: 5px; } }
+    min-height: 208px;
+    padding: 0;
+    align-items: flex-start;
+    justify-content: flex-end; }
+    .about__background .section__img {
+      border-radius: 6px; } }
 
 @media screen and (min-width: 1366px) {
   .about__wrapper {
-    padding: 0 32px 36px 32px; }
+    padding: 0 32px 51px 32px; }
   .about__description {
     padding-right: 36px;
     letter-spacing: -0.01em; }
   .about__read-more {
     margin: 14px 0 0 8px; }
   .about__background {
-    height: 312px;
-    padding: 0; } }
+    min-height: 307px;
+    padding: 0; }
+    .about__background .section__img {
+      border-radius: 12px; } }
 
 .types__list,
 .brands__list {
@@ -670,16 +687,19 @@ label {
   .brands__read-more {
     display: inline-flex;
     margin: 24px 0 32px 34px; }
-  .types__item:hover,
-  .brands__item:hover {
+  .types__item:hover, .types__item:focus,
+  .brands__item:hover,
+  .brands__item:focus {
     box-shadow: 0 0 5px 1px var(--action-color-fourth);
     color: var(--text-color-second); }
-    .types__item:hover .section__button,
-    .brands__item:hover .section__button {
+    .types__item:hover .section__button, .types__item:focus .section__button,
+    .brands__item:hover .section__button,
+    .brands__item:focus .section__button {
       border: 2px solid var(--action-color-fourth);
       box-shadow: 0 0 5px 1px var(--action-color-fourth); }
-      .types__item:hover .section__button path,
-      .brands__item:hover .section__button path {
+      .types__item:hover .section__button path, .types__item:focus .section__button path,
+      .brands__item:hover .section__button path,
+      .brands__item:focus .section__button path {
         fill: var(--action-color-fourth); }
   .brands__list {
     max-height: 208px; } }
@@ -953,13 +973,17 @@ label {
     padding: 12px 0 12px 16px;
     border-radius: 8px;
     border: 1px solid var(--main-color-second);
-    background: var(--base-color-white); }
+    background: var(--base-color-white);
+    outline: 2px solid transparent;
+    transition: all 0.5s; }
     .modal__input--textarea {
       height: 118px;
       resize: none;
       margin-top: 16px; }
     .modal__input:not(:first-of-type) {
       margin-top: 16px; }
+    .modal__input:hover {
+      outline: 2px solid var(--action-color-fourth); }
     .modal__input:focus {
       outline: 2px solid var(--action-color-first); }
     .modal__input::-webkit-input-placeholder {
