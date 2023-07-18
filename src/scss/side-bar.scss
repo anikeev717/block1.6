@@ -63,6 +63,7 @@
     @include TTLakesElement;
     transition: all 0.3s;
     &:hover,
+    &:focus,
     &--active {
       color: var(--text-color-second);
       position: relative;
@@ -77,7 +78,8 @@
         object-fit: contain;
       }
     }
-    &:hover {
+    &:hover,
+    &:focus {
       color: var(--action-color-first);
       &::after {
         background-image: url('../img/actions-icon/highlight-mini-h.svg');
@@ -148,6 +150,7 @@
     }
     &__link {
       &:hover,
+      &:focus,
       &--active {
         &::after {
           left: -24px;
@@ -200,6 +203,7 @@
     }
     &__link {
       &:hover,
+      &:focus,
       &--active {
         &::after {
           background: var(--action-color-fourth);
@@ -207,7 +211,8 @@
           width: 3px;
         }
       }
-      &:hover {
+      &:hover,
+      &:focus {
         &::after {
           background: var(--action-color-first);
         }

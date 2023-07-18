@@ -20,25 +20,27 @@
       <aside class="side-bar"
         ><div class="side-bar__wrapper">
           <div class="side-bar__header">
-            <label
-              for="burger-button"
+            <button
+              type="button"
               class="section__button side-bar__action side-bar__action--burger"
-              ><img
-                class="section__img"
-                src="./img/actions-icon/burger_close.svg"
-                alt="burger-close"
-            /></label>
+              ><label for="burger-button" class="section__button-label"
+                ><img
+                  class="section__img"
+                  src="./img/actions-icon/burger_close.svg"
+                  alt="burger-close" /></label
+            ></button>
+
             <a href="#" class="side-bar__logo"
               ><img src="./img/CPS.svg" alt="cps-logo" class="section__img"
             /></a>
-            <a
-              href="#"
+            <button
+              type="button"
               class="section__button side-bar__action side-bar__action--search"
               ><img
                 src="./img/actions-icon/search.svg"
                 alt="search-icon"
                 class="section__img"
-            /></a>
+            /></button>
           </div>
           <div class="side-bar__content">
             <div class="side-bar__menu">
@@ -74,28 +76,32 @@
               ></div
             ><div class="side-bar__info-wrapper"
               ><div class="side-bar__action-wrapper">
-                <label
-                  for="modal-callback-open"
-                  class="section__button side-bar__action"
-                  ><img
-                    src="./img/actions-icon/chat copy.svg"
-                    alt="ring-icon"
-                    class="section__img"
-                /></label>
-                <label
-                  for="modal-feedback-open"
-                  class="section__button side-bar__action"
-                  ><img
-                    src="./img/actions-icon/chat.svg"
-                    alt="chat-icon"
-                    class="section__img"
-                /></label>
-                <label for="" class="section__button side-bar__action"
-                  ><img
-                    src="./img/actions-icon/profile.svg"
-                    alt="profile-icon"
-                    class="section__img"
-                /></label>
+                <button type="button" class="section__button side-bar__action"
+                  ><label
+                    for="modal-callback-open"
+                    class="section__button-label"
+                    ><img
+                      src="./img/actions-icon/chat copy.svg"
+                      alt="ring-icon"
+                      class="section__img" /></label
+                ></button>
+
+                <button type="button" class="section__button side-bar__action"
+                  ><label
+                    for="modal-feedback-open"
+                    class="section__button-label"
+                    ><img
+                      src="./img/actions-icon/chat.svg"
+                      alt="chat-icon"
+                      class="section__img" /></label
+                ></button>
+                <button type="button" class="section__button side-bar__action"
+                  ><label for="" class="section__button-label"
+                    ><img
+                      src="./img/actions-icon/profile.svg"
+                      alt="profile-icon"
+                      class="section__img" /></label
+                ></button>
               </div>
               <p class="side-bar__info side-bar__info--email">mail@cps.com</p>
               <p class="side-bar__info side-bar__info--phone">8 800 890 8900</p>
@@ -118,12 +124,13 @@
         <header class="header">
           <div class="header__wrapper">
             <div class="header__wrapper--left">
-              <label for="burger-button" class="section__button header__action"
-                ><img
-                  src="./img/actions-icon/burger.svg"
-                  alt="burger-open"
-                  class="section__img"
-              /></label>
+              <button type="button" class="section__button header__action">
+                <label for="burger-button" class="section__button-label"
+                  ><img
+                    src="./img/actions-icon/burger.svg"
+                    alt="burger-open"
+                    class="section__img" /></label
+              ></button>
               <div class="header__border header__border--left"></div>
               <a href="#" class="header__logo"
                 ><img
@@ -134,28 +141,30 @@
 
             <div class="header__wrapper--right">
               <div class="header__action-wrapper header__action-wrapper--add">
-                <label
-                  for="modal-callback-open"
-                  class="section__button header__action"
-                  ><img
-                    src="./img/actions-icon/chat copy.svg"
-                    alt="ring-icon"
-                    class="section__img"
-                /></label>
-                <label
-                  for="modal-feedback-open"
-                  class="section__button header__action"
-                  ><img
-                    src="./img/actions-icon/chat.svg"
-                    alt="chat-icon"
-                    class="section__img"
-                /></label>
-                <label for="" class="section__button header__action"
-                  ><img
-                    src="./img/actions-icon/profile.svg"
-                    alt="profile-icon"
-                    class="section__img"
-                /></label> </div
+                <button type="button" class="section__button header__action"
+                  ><label
+                    for="modal-callback-open"
+                    class="section__button-label"
+                    ><img
+                      src="./img/actions-icon/chat copy.svg"
+                      alt="ring-icon"
+                      class="section__img" /></label
+                ></button>
+
+                <button type="button" class="section__button header__action">
+                  <label for="modal-feedback-open" class="section__button-label"
+                    ><img
+                      src="./img/actions-icon/chat.svg"
+                      alt="chat-icon"
+                      class="section__img" /></label
+                ></button>
+                <button type="button" class="section__button header__action">
+                  <label for="" class="section__button-label"
+                    ><img
+                      src="./img/actions-icon/profile.svg"
+                      alt="profile-icon"
+                      class="section__img" /></label
+                ></button> </div
               ><div class="header__border header__border--right"></div>
               <div class="header__action-wrapper header__action-wrapper--main">
                 <a
@@ -182,44 +191,46 @@
             <div class="service__list section__list">
               <div class="service__swiper">
                 <div class="swiper-wrapper">
-                  <div class="swiper-slide"
+                  <div class="swiper-slide" tabindex="0"
                     ><div class="service__item"
-                      ><a href="#brands" class="service__link"
+                      ><a href="#brands" class="service__link" tabindex="-1"
                         >Ремонтируемые бренды
                       </a></div
                     ></div
                   >
-                  <div class="swiper-slide"
+                  <div class="swiper-slide" tabindex="0"
                     ><div class="service__item"
-                      ><a href="#types" class="service__link"
+                      ><a href="#types" class="service__link" tabindex="-1"
                         >Дополнительные услуги
                       </a></div
                     ></div
                   >
-                  <div class="swiper-slide"
+                  <div class="swiper-slide" tabindex="0"
                     ><div class="service__item"
-                      ><a href="#price" class="service__link"
+                      ><a href="#price" class="service__link" tabindex="-1"
                         >Цены на услуги
                       </a></div
                     ></div
                   >
-                  <div class="swiper-slide"
+                  <div class="swiper-slide" tabindex="0"
                     ><div class="service__item"
-                      ><a href="#" class="service__link"
+                      ><a href="#" class="service__link" tabindex="-1"
                         >Адреса сервисных центров
                       </a></div
                     ></div
                   >
-                  <div class="swiper-slide"
+                  <div class="swiper-slide" tabindex="0"
                     ><div class="service__item"
-                      ><a href="#price" class="service__link"
+                      ><a href="#price" class="service__link" tabindex="-1"
                         >Специальные цены
                       </a></div
                     ></div
                   >
-                  <div class="swiper-slide"
+                  <div class="swiper-slide" tabindex="0"
                     ><div class="service__item"
-                      ><a href="#" class="service__link">Отзывы </a></div
+                      ><a href="#" class="service__link" tabindex="-1"
+                        >Отзывы
+                      </a></div
                     ></div
                   >
                 </div>
@@ -1027,13 +1038,15 @@
             </button>
           </form>
         </div>
-        <div class="modal__close-area">
-          <label for="modal-feedback-open" class="modal__button section__button"
-            ><img
-              src="./img/actions-icon/burger_close.svg"
-              alt=""
-              class="section__img" /></label
-          ><label
+        <div class="modal__close-area"
+          ><button type="button" class="modal__button section__button"
+            ><label for="modal-feedback-open" class="section__button-label"
+              ><img
+                src="./img/actions-icon/burger_close.svg"
+                alt=""
+                class="section__img" /></label
+          ></button>
+          <label
             for="modal-feedback-open"
             class="modal__close-area-item"
           ></label
@@ -1087,15 +1100,15 @@
             </button>
           </form>
         </div>
-        <div class="modal__close-area"
-          ><label
-            for="modal-callback-open"
-            class="modal__button section__button"
-            ><img
-              src="./img/actions-icon/burger_close.svg"
-              alt=""
-              class="section__img section__img" /></label
-          ><label
+        <div class="modal__close-area">
+          <button type="button" class="modal__button section__button"
+            ><label for="modal-callback-open" class="section__button-label"
+              ><img
+                src="./img/actions-icon/burger_close.svg"
+                alt=""
+                class="section__img section__img" /></label
+          ></button>
+          <label
             for="modal-callback-open"
             class="modal__close-area-item"
           ></label

@@ -12,12 +12,14 @@
   &__link {
     color: inherit;
     transition: all 0.5s;
-    &:hover {
+    &:hover,
+    &:focus {
       color: var(--action-color-first);
     }
     &--modal {
       color: var(--action-color-first);
-      &:hover {
+      &:hover,
+      &:focus {
         color: var(--action-color-fourth);
       }
     }
@@ -33,7 +35,8 @@
       min-width: 40px;
       min-height: 40px;
     }
-    &:hover:not(.section__button--go) {
+    &:hover:not(.section__button--go),
+    &:focus:not(.section__button--go) {
       background-color: var(--action-color-fourth);
       box-shadow: 0 0 5px 1px var(--action-color-fourth);
     }
@@ -65,6 +68,11 @@
         margin-left: 12px;
       }
     }
+    &-label {
+      min-width: inherit;
+      min-height: inherit;
+      @include DisplayFlexAiJcCenter;
+    }
   }
   &__img {
     @include ImageIconElement;
@@ -82,7 +90,8 @@
     & .section__img {
       margin-right: 16px;
     }
-    &:hover {
+    &:hover,
+    &:focus {
       color: var(--action-color-first);
       & path {
         fill: var(--action-color-first);

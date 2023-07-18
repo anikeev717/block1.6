@@ -70,7 +70,8 @@
     }
     &__swiper {
       & .swiper-slide {
-        &:hover {
+        &:hover,
+        &:focus {
           border: 2px solid var(--action-color-first);
           background: var(--base-color-white);
           color: var(--action-color-first);

@@ -103,7 +103,8 @@
       &--status::before {
         content: 'Статус ремонта';
       }
-      &:hover {
+      &:hover,
+      &:focus {
         &::before {
           color: var(--action-color-fourth);
         }

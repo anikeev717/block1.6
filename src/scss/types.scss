@@ -44,7 +44,8 @@
       margin: 24px 0 32px 34px;
     }
     &__item {
-      &:hover {
+      &:hover,
+      &:focus {
         box-shadow: 0 0 5px 1px var(--action-color-fourth);
         color: var(--text-color-second);
         & .section__button {

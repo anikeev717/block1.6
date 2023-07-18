@@ -72,6 +72,8 @@
     border-radius: 8px;
     border: 1px solid var(--main-color-second);
     background: var(--base-color-white);
+    outline: 2px solid transparent;
+    transition: all 0.5s;
 
     &--textarea {
       height: 118px;
@@ -80,6 +82,9 @@
     }
     &:not(:first-of-type) {
       margin-top: 16px;
+    }
+    &:hover {
+      outline: 2px solid var(--action-color-fourth);
     }
     &:focus {
       outline: 2px solid var(--action-color-first);
@@ -128,7 +133,6 @@
     &__button {
       top: 24px;
       right: 344px;
-      // transform: translateX(-100%);
     }
     &__title {
       margin-top: 8px;
