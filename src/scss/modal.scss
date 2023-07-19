@@ -12,7 +12,8 @@
   opacity: 0;
   transition: all 0.5s;
   &__wrapper {
-    width: 320px;
+    // width: 320px;
+    width: 100%;
     height: 100%;
     padding: 24px 16px 75px;
     position: fixed;
@@ -34,7 +35,8 @@
   &__button {
     position: absolute;
     top: 24px;
-    right: 264px;
+    // right: 264px;
+    left: 16px;
     z-index: 100;
   }
   &__title {
@@ -55,8 +57,10 @@
     }
   }
   &__form {
-    width: 100%;
+    // width: 100%;
+    max-width: 100%;
     height: 465px;
+    margin: 0 auto;
     position: relative;
   }
   &__sign-up {
@@ -132,6 +136,7 @@
     }
     &__button {
       top: 24px;
+      left: unset;
       right: 344px;
     }
     &__title {

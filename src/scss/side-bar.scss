@@ -20,13 +20,14 @@
   opacity: 0;
   transition: all 0.5s;
   &__wrapper {
-    width: 320px;
+    // width: 320px;
+    width: 100%;
     height: 100%;
     padding: 0 16px;
     position: fixed;
     z-index: 100;
     background-color: var(--base-color-white);
-    overflow-y: auto;
+    // overflow-y: auto;
   }
   &__close-area {
     width: 100%;
