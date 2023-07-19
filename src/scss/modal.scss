@@ -19,7 +19,12 @@
     position: fixed;
     z-index: 100;
     background-color: var(--base-color-white);
-    // overflow-y: auto;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
   &__close-area {
     width: 100%;
