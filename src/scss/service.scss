@@ -23,7 +23,7 @@
     align-items: center;
     height: 40px;
     transition: all 0.3s;
-    padding: 0 20px;
+    padding: 0 10px;
     outline: 2px solid transparent;
     border-radius: 6px;
   }
@@ -69,7 +69,14 @@
       height: auto;
     }
     &__swiper {
+      & .swiper-wrapper {
+        flex-wrap: wrap;
+      }
       & .swiper-slide {
+        &:first-of-type {
+          border: 2px solid var(--action-color-fiveth);
+          background-color: var(--base-color-white);
+        }
         &:hover,
         &:focus {
           border: 2px solid var(--action-color-first);

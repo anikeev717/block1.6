@@ -52,13 +52,15 @@
   }
   &__menu {
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding-bottom: 32px;
   }
-  &__item:not(:first-of-type) {
-    margin-top: 24px;
-  }
+  // &__item:not(:first-of-type) {
+  //   margin-top: 24px;
+  // }
   &__link {
     color: var(--text-color-first);
     @include TTLakesElement;
@@ -197,7 +199,10 @@
     }
     &__content {
       padding-top: 8px;
-      height: calc(100vh - 8px - 110px);
+      height: calc(100vh - 118px);
+    }
+    &__menu {
+      height: auto;
     }
     &__item:not(:first-of-type) {
       margin-top: 28.31px;
