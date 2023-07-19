@@ -257,13 +257,12 @@ label {
   opacity: 0;
   transition: all 0.5s; }
   .side-bar__wrapper {
-    width: 320px;
+    width: 100%;
     height: 100%;
     padding: 0 16px;
     position: fixed;
     z-index: 100;
-    background-color: var(--base-color-white);
-    overflow-y: auto; }
+    background-color: var(--base-color-white); }
   .side-bar__close-area {
     width: 100%;
     display: block;
@@ -717,7 +716,6 @@ label {
   padding: 16px 0 16px 8px; }
 
 .price__row {
-  width: 260px;
   height: 200px;
   border-radius: 6px;
   background: var(--base-color-white);
@@ -917,7 +915,7 @@ label {
   opacity: 0;
   transition: all 0.5s; }
   .modal__wrapper {
-    width: 320px;
+    width: 100%;
     height: 100%;
     padding: 24px 16px 75px;
     position: fixed;
@@ -936,7 +934,7 @@ label {
   .modal__button {
     position: absolute;
     top: 24px;
-    right: 264px;
+    left: 16px;
     z-index: 100; }
   .modal__title {
     margin-top: 80px;
@@ -959,8 +957,9 @@ label {
       background-image: url(./static/highlight.svg);
       object-fit: contain; }
   .modal__form {
-    width: 100%;
+    max-width: 100%;
     height: 465px;
+    margin: 0 auto;
     position: relative; }
   .modal__sign-up {
     width: 100%;
@@ -1053,6 +1052,7 @@ label {
             backdrop-filter: grayscale(100%); }
   .modal__button {
     top: 24px;
+    left: unset;
     right: 344px; }
   .modal__title {
     margin-top: 8px; }
