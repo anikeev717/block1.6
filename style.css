@@ -282,11 +282,11 @@ label {
     justify-content: space-between; }
   .side-bar__menu {
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; }
-  .side-bar__item:not(:first-of-type) {
-    margin-top: 24px; }
+    justify-content: space-between;
+    padding-bottom: 32px; }
   .side-bar__link {
     color: var(--text-color-first);
     font-family: 'TT Lakes';
@@ -401,7 +401,9 @@ label {
       display: none; }
     .side-bar__content {
       padding-top: 8px;
-      height: calc(100vh - 8px - 110px); }
+      height: calc(100vh - 118px); }
+    .side-bar__menu {
+      height: auto; }
     .side-bar__item:not(:first-of-type) {
       margin-top: 28.31px; }
     .side-bar__link:hover::after, .side-bar__link:focus::after, .side-bar__link--active::after {
@@ -530,7 +532,7 @@ label {
   align-items: center;
   height: 40px;
   transition: all 0.3s;
-  padding: 0 20px;
+  padding: 0 10px;
   outline: 2px solid transparent;
   border-radius: 6px; }
 
@@ -567,6 +569,11 @@ label {
   .service__list {
     margin: 8px 36px;
     height: auto; }
+  .service__swiper .swiper-wrapper {
+    flex-wrap: wrap; }
+  .service__swiper .swiper-slide:first-of-type {
+    border: 2px solid var(--action-color-fiveth);
+    background-color: var(--base-color-white); }
   .service__swiper .swiper-slide:hover, .service__swiper .swiper-slide:focus {
     border: 2px solid var(--action-color-first);
     background: var(--base-color-white);
@@ -920,8 +927,7 @@ label {
     padding: 24px 16px 75px;
     position: fixed;
     z-index: 100;
-    background-color: var(--base-color-white);
-    overflow-y: auto; }
+    background-color: var(--base-color-white); }
   .modal__close-area {
     width: 100%;
     display: block;
