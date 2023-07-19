@@ -58,9 +58,9 @@
     justify-content: space-between;
     padding-bottom: 32px;
   }
-  // &__item:not(:first-of-type) {
-  //   margin-top: 24px;
-  // }
+  &__item:not(:first-of-type) {
+    margin-top: 3.5%;
+  }
   &__link {
     color: var(--text-color-first);
     @include TTLakesElement;
@@ -148,6 +148,9 @@
     &__content {
       padding-top: 32px;
     }
+    &__menu {
+      justify-content: flex-start;
+    }
     &__item:not(:first-of-type) {
       margin-top: 32px;
     }
@@ -170,10 +173,8 @@
 }
 
 @media screen and (min-width: 1366px) {
-  .container {
-    display: flex;
-    width: 1366px;
-    margin: 0 auto;
+  #burger-button:checked + .side-bar .side-bar__wrapper {
+    box-shadow: none;
   }
   .side-bar {
     width: 306px;
