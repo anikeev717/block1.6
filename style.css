@@ -287,6 +287,8 @@ label {
     flex-direction: column;
     justify-content: space-between;
     padding-bottom: 32px; }
+  .side-bar__item:not(:first-of-type) {
+    margin-top: 3.5%; }
   .side-bar__link {
     color: var(--text-color-first);
     font-family: 'TT Lakes';
@@ -369,6 +371,8 @@ label {
     padding: 0 24px; }
   .side-bar__content {
     padding-top: 32px; }
+  .side-bar__menu {
+    justify-content: flex-start; }
   .side-bar__item:not(:first-of-type) {
     margin-top: 32px; }
   .side-bar__link:hover::after, .side-bar__link:focus::after, .side-bar__link--active::after {
@@ -379,10 +383,8 @@ label {
     height: 66px; } }
 
 @media screen and (min-width: 1366px) {
-  .container {
-    display: flex;
-    width: 1366px;
-    margin: 0 auto; }
+  #burger-button:checked + .side-bar .side-bar__wrapper {
+    box-shadow: none; }
   .side-bar {
     width: 306px;
     height: auto;
