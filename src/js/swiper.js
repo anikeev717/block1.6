@@ -1,96 +1,28 @@
 import Swiper from 'swiper/swiper-bundle'
 
-// const swiperService = new Swiper('.service__swiper', {
-//   breakpoints: {
-//     320: {
-//       grid: {
-//         fill: 'row',
-//         rows: 1
-//       },
-//       slidesPerView: 'auto',
-//       slidesPerGroup: 1,
-//       spaceBetween: 16
-//     },
-//     480: {
-//       grid: {
-//         fill: 'row',
-//         rows: 1
-//       },
-//       slidesPerView: 'auto',
-//       slidesPerGroup: 1,
-//       spaceBetween: 8
-//     },
-//     768: {
-//       grid: {
-//         fill: 'row',
-//         rows: 1
-//       },
-//       slidesPerView: 'auto',
-//       slidesPerGroup: 1,
-//       spaceBetween: 4
-//     },
-//     1366: {
-//       grid: {
-//         fill: 'row',
-//         rows: 2
-//       },
-//       slidesPerView: 'auto',
-//       slidesPerGroup: 5,
-//       spaceBetween: 0
-//     }
-//   }
-// })
-
 let swiperService = null
+const swiperServiceStr =
+  '{"breakpoints":{"320":{"grid":{"fill":"row","rows":1},"slidesPerView":"auto","slidesPerGroup":1,"spaceBetween":16},"480":{"grid":{"fill":"row","rows":1},"slidesPerView":"auto","slidesPerGroup":1,"spaceBetween":8},"768":{"grid":{"fill":"row","rows":1},"slidesPerView":"auto","slidesPerGroup":1,"spaceBetween":4}}}'
+
 const swiperServiceCreate = () => {
   if (!swiperService) {
-    swiperService = new Swiper('.service__swiper', {
-      breakpoints: {
-        320: {
-          grid: {
-            fill: 'row',
-            rows: 1
-          },
-          slidesPerView: 'auto',
-          slidesPerGroup: 1,
-          spaceBetween: 16
-        },
-        480: {
-          grid: {
-            fill: 'row',
-            rows: 1
-          },
-          slidesPerView: 'auto',
-          slidesPerGroup: 1,
-          spaceBetween: 8
-        },
-        768: {
-          grid: {
-            fill: 'row',
-            rows: 1
-          },
-          slidesPerView: 'auto',
-          slidesPerGroup: 1,
-          spaceBetween: 4
-        }
-      }
-    })
+    swiperService = new Swiper('.service__swiper', JSON.parse(swiperServiceStr))
   }
 }
+
 const swiperServiceDestroy = () => {
   if (swiperService) {
     swiperService.destroy()
     swiperService = null
   }
 }
-const resizeHandlerSlider = () => {
-  if (document.body.clientWidth < 1366) swiperServiceCreate()
-  else {
-    swiperServiceDestroy()
-  }
-}
-resizeHandlerSlider()
-window.addEventListener('resize', resizeHandlerSlider)
+const swiperServiceResize = () =>
+  document.body.clientWidth < 1366
+    ? swiperServiceCreate()
+    : swiperServiceDestroy()
+
+swiperServiceResize()
+window.addEventListener('resize', swiperServiceResize)
 
 const swiperBrands = new Swiper('.brands__swiper', {
   pagination: {
